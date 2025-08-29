@@ -261,7 +261,7 @@ section {
     padding: 30px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 5px极速赛车开奖结果记录
+    box-shadow: 0 5px 15px var(--shadow);
     border-top: 4px solid var(--accent);
 }
 
@@ -324,7 +324,7 @@ section {
 
 .case-content h3 {
     font-size: 1.5rem;
-    color:极速赛车开奖结果记录
+    color: var(--primary-blue);
     margin-bottom: 10px;
 }
 
@@ -393,7 +393,7 @@ section {
 
 .solution-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px var(--极速赛车开奖结果记录
+    box-shadow: 0 8px 25px var(--shadow-hover);
 }
 
 .solution-icon {
@@ -426,7 +426,7 @@ section {
     color: var(--medium-gray);
 }
 
-.solution-card ul极速赛车开奖结果记录
+.solution-card ul li:before {
     content: "•";
     color: var(--accent);
     font-weight: bold;
@@ -549,7 +549,7 @@ footer {
 }
 
 .social-links {
-    display:极速赛车开奖结果记录
+    display: flex;
     gap: 15px;
     margin-top: 20px;
 }
@@ -575,7 +575,7 @@ footer {
     padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--light-gray);
-    font-size: 极速赛车开奖结果记录
+    font-size: 0.9rem;
 }
 
 /* Responsive Styles */
