@@ -22,6 +22,7 @@ body {
     line-height: 1.6;
     color: var(--dark-gray);
     background-color: var(--white);
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -43,18 +44,19 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 10px 0;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    z-index: 1001;
 }
 
 .logo-image {
@@ -73,55 +75,109 @@ header {
 }
 
 .logo-text {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-blue);
 }
 
+/* Mobile-first navigation */
+.mobile-menu-btn {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-blue);
+    z-index: 1001;
+    background: none;
+    border: none;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--white);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 80px 20px 20px;
+    overflow-y: auto;
+}
+
+nav.active {
+    right: 0;
+}
+
 nav ul {
-    display: flex;
     list-style: none;
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-bottom: 15px;
 }
 
 nav ul li a {
+    display: block;
     text-decoration: none;
     color: var(--dark-gray);
     font-weight: 500;
-    transition: color 0.3s;
-    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    font-size: 1.1rem;
 }
 
 nav ul li a:hover {
     color: var(--accent);
+    background-color: var(--light-gray);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .btn {
     display: inline-block;
     background-color: var(--accent);
     color: var(--white);
-    padding: 12px 25px;
-    border-radius: 4px;
+    padding: 14px 28px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s;
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    text-align: center;
 }
 
 .btn:hover {
     background-color: var(--primary-blue);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow);
+    box-shadow: 极速赛车开奖结果记录
+    0 4px 8px var(--shadow);
 }
 
 .btn-outline {
     background-color: transparent;
-    border: 2px solid var(--accent);
+    border: 2极速赛车开奖结果记录
+    px solid var(--accent);
     color: var(--accent);
 }
 
@@ -130,17 +186,10 @@ nav ul li a:hover {
     color: var(--white);
 }
 
-.mobile-menu-btn {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--primary-blue);
-}
-
 /* Hero Section */
 .hero {
     background: linear-gradient(to bottom, var(--light-gray), var(--white));
-    padding: 100px 0 80px;
+    padding: 80px 0 60px;
     position: relative;
     text-align: center;
 }
@@ -151,45 +200,47 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
     color: var(--primary-blue);
     line-height: 1.2;
 }
 
 .hero h2 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--secondary-blue);
     margin-bottom: 15px;
     font-weight: 400;
 }
 
+.极速赛车开奖结果记录
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--medium-gray);
     margin-bottom: 30px;
-    line-height: 1.6;
+    line-height: 1.极速赛车开奖结果记录
+    6;
 }
 
 .hero-buttons {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
     margin-top: 30px;
 }
 
 /* Section Styles */
 section {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .section-title h2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: var(--primary-blue);
     margin-bottom: 15px;
 }
@@ -198,7 +249,7 @@ section {
     color: var(--medium-gray);
     max-width: 700px;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
@@ -209,14 +260,14 @@ section {
 
 .security-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 25px;
 }
 
 .security-card {
     background-color: var(--light-gray);
-    border-radius: 6px;
-    padding: 30px;
+    border-radius: 8px;
+    padding: 25px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 5px 15px var(--shadow);
@@ -235,13 +286,15 @@ section {
 
 .security-card h3 {
     margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+   极速赛车开奖结果记录
     color: var(--primary-blue);
 }
 
 .security-card p {
     color: var(--medium-gray);
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 /* Problems Section */
@@ -251,14 +304,15 @@ section {
 
 .problems-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-column极速赛车开奖结果记录
+    s: 1fr;
+    gap: 25px;
 }
 
 .problem-card {
     background-color: var(--white);
-    border-radius: 6px;
-    padding: 30px;
+    border-radius: 8px;
+    padding: 25px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 5px 15px var(--shadow);
@@ -278,13 +332,14 @@ section {
 
 .problem-card h3 {
     margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--primary-blue);
 }
 
 .problem-card p {
     color: var(--medium-gray);
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 /* Case Studies Section */
@@ -294,13 +349,13 @@ section {
 
 .case-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 25px;
 }
 
 .case-card {
     background-color: var(--light-gray);
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -308,7 +363,8 @@ section {
 
 .case-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px var(--shadow-hover);
+    box-shadow: 0 10极速赛车开奖结果记录
+    px 25px var(--shadow-hover);
 }
 
 .case-header {
@@ -319,11 +375,11 @@ section {
 }
 
 .case-content {
-    padding: 25px;
+    padding: 20px;
 }
 
 .case-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--primary-blue);
     margin-bottom: 10px;
 }
@@ -336,13 +392,15 @@ section {
     font-size: 0.9rem;
 }
 
-.case-details {
+.c极速赛车开奖结果记录
+ase-details {
     margin-bottom: 15px;
 }
 
 .case-details h4 {
     color: var(--primary-blue);
     margin-bottom: 5px;
+    font-size: 1.1rem;
 }
 
 .case-details ul {
@@ -369,6 +427,7 @@ section {
     margin-bottom: 20px;
     color: var(--medium-gray);
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 /* Solutions Section */
@@ -378,14 +437,14 @@ section {
 
 .solutions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 25px;
 }
 
 .solution-card {
     background-color: var(--white);
-    border-radius: 6px;
-    padding: 30px;
+    border-radius: 8px;
+    padding: 25px;
     box-shadow: 0 5px 15px var(--shadow);
     transition: transform 0.3s;
     border-top: 4px solid var(--accent);
@@ -403,7 +462,7 @@ section {
 }
 
 .solution-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--primary-blue);
     margin-bottom: 15px;
 }
@@ -412,6 +471,7 @@ section {
     margin-bottom: 20px;
     color: var(--medium-gray);
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 .solution-card ul {
@@ -441,26 +501,24 @@ section {
 
 .weather-tool {
     background-color: var(--light-gray);
-    border-radius: 6px;
-    padding: 40px;
+    border-radius: 8px;
+    padding: 30px;
     box-shadow: 0 5px 15px var(--shadow);
-    max-width: 800px;
     margin: 0 auto;
 }
 
 .weather-input {
     display: flex;
+    flex-direction: column;
     gap: 15px;
     margin-bottom: 30px;
-    flex-wrap: wrap;
 }
 
 .weather-input input {
-    flex: 1;
-    min-width: 200px;
+    width: 100%;
     padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
 }
@@ -470,28 +528,35 @@ section {
     border-color: var(--accent);
 }
 
+.weather-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .weather-display {
     background-color: var(--white);
-    border-radius: 6px;
-    padding: 25px;
+    border-radius: 8px;
+    padding: 20px;
     text-align: center;
 }
 
 .weather-icon {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: var(--accent);
     margin-bottom: 15px;
 }
 
 .weather-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     margin-top: 20px;
 }
 
 .weather-detail {
-    background-color: var(--light-gray);
+    background-color: var(--极速赛车开奖结果记录
+    light-gray);
     padding: 15px;
     border-radius: 6px;
 }
@@ -505,7 +570,7 @@ section {
 
 .weather-detail p {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--primary-blue);
 }
 
@@ -513,19 +578,20 @@ section {
 footer {
     background-color: var(--primary-blue);
     color: var(--white);
-    padding: 60px 0 30px;
+    padding: 50px 0 20px;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
     margin-bottom: 40px;
 }
 
 .footer-column h3 {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 20极速赛车开奖结果记录
+    px;
     color: var(--light-accent);
 }
 
@@ -578,60 +644,74 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
     }
     
-    .logo {
-        margin-bottom: 15px;
+    nav {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        overflow: visible;
     }
     
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 15px;
+        display: flex;
     }
     
     nav ul li {
-        margin: 10px 0;
+        margin-bottom: 0;
+        margin-left: 25px;
     }
     
-    .mobile-menu-btn {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
+    nav ul li a {
+        padding: 8px 0;
+        border-radius: 0;
+        font-size: 1rem;
+    }
+    
+    nav ul极速赛车开奖结果记录
+    li a:hover {
+        background-color: transparent;
+    }
+    
+    .overlay {
+        display: none;
     }
     
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
     }
     
     .hero h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     
     .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        justify-content: center;
     }
     
-    .section-title h2 {
-        font-size: 2rem;
+    .security-grid, .problems-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .case-grid, .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .weather-input {
-        flex-direction: column;
+        flex-direction: row;
     }
     
-    .weather-input input {
-        width: 100%;
+    .weather-buttons {
+        flex-direction: row;
     }
     
-    .security-grid, .problems-grid, .case-grid, .solutions-grid {
-        grid-template-columns: 1fr;
-    }
-}
+    .footer-grid {
+        grid-template-columns: repeat
