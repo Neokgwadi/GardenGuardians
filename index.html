@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garden Guardians - Protecting Community Food Gardens from Climate Change</title>
+    <title>Garden Guardians - Protecting Community Food Gardens</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -14,10 +14,14 @@
         <div class="container header-container">
             <div class="logo">
                 <div class="logo-image">
-                    <img src="images/logo.png" alt="Garden Guardians Logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiMxNmEwODUiLz4KPHBhdGggZD0iTTIwIDEwQzE1LjU4IDExIDExLjUgMTUgMTAgMjBDMTEuNSAyNSAxNS41OCAyOSAyMCAzMEMyNC40MiAyOSAyOC41IDI1IDMwIDIwQzI4LjUgMTUgMjQuNDIgMTEgMjAgMTBaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTUgMTVDMTYuNjUgMTUgMTggMTYuMzUgMTggMThDMTggMTkuNjUgMTYuNjUgMjEgMTUgMjFDMTMuMzUgMjEgMTIgMTkuNjUgMTIgMThDMTIgMTYuMzUgMTMuMzUgMTUgMTUgMTVaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjUgMTVDMjYuNjUgMTUgMjggMTYuMzUgMjggMThDMjggMTkuNjUgMjYuNjUgMjEgMjUgMjFDMjMuMzUgMjEgMjIgMTkuNjUgMjIgMThDMjIgMTYuMzUgMjMuMzUgMTUgMjUgMTVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4=" alt="Garden Guardians Logo">
                 </div>
                 <span class="logo-text">Garden Guardians</span>
             </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
             
             <nav>
                 <ul>
@@ -28,12 +32,10 @@
                     <li><a href="#weather-alert">Weather Alerts</a></li>
                 </ul>
             </nav>
-            
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </header>
+
+    <div class="overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -74,6 +76,12 @@
                     <div class="security-icon"><i class="fas fa-hands-helping"></i></div>
                     <h3>Benefits of Community Gardens</h3>
                     <p>Community gardens reduce food insecurity, promote skill development, encourage healthy eating, and support sustainable farming practices.</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Sustainable Practices</h3>
+                    <p>Gardening raises environmental awareness and supports sustainable farming practices, contributing to a healthier ecosystem for future generations.</p>
                 </div>
             </div>
         </div>
@@ -285,8 +293,10 @@
             <div class="weather-tool">
                 <div class="weather-input">
                     <input type="text" placeholder="Enter your location...">
-                    <a href="#" class="btn">Get Alerts</a>
-                    <a href="#" class="btn btn-outline">Get App</a>
+                    <div class="weather-buttons">
+                        <a href="#" class="btn">Get Alerts</a>
+                        <a href="#" class="btn btn-outline">Get App</a>
+                    </div>
                 </div>
                 
                 <div class="weather-display">
@@ -373,28 +383,42 @@
 
     <script>
         // JavaScript for mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
             const nav = document.querySelector('nav');
-            nav.classList.toggle('show');
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            function toggleMenu() {
+                nav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+            }
+            
+            menuBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+            
+            // Close menu when clicking on links
+            navLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
-                
-                // Close mobile menu after clicking
-                if (window.innerWidth <= 768) {
-                    document.querySelector('nav').classList.remove('show');
-                }
             });
         });
     </script>
