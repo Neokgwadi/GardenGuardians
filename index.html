@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garden Guardians - Protecting Community Food Gardens</title>
+
+    <!-- External fonts & icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Local stylesheet (moved from inline) -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -422,8 +426,8 @@
                     <h3>Contact Us</h3>
                     <ul>
                         <li><i class="fas fa-envelope"></i> info@gardenguardians.org</li>
-                        <li><i class="fas fa-phone"></i> +27 21 123 4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Cape Town, South Africa</li>
+                        <li><i class="fas fa-phone"></i> +27 12 456 789</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
                     </ul>
                 </div>
             </div>
@@ -435,7 +439,6 @@
     </footer>
 
     <script>
-        // JavaScript for mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             const menuBtn = document.querySelector('.mobile-menu-btn');
             const nav = document.querySelector('nav');
@@ -451,12 +454,10 @@
             menuBtn.addEventListener('click', toggleMenu);
             overlay.addEventListener('click', toggleMenu);
             
-            // Close menu when clicking on links
             navLinks.forEach(link => {
                 link.addEventListener('click', toggleMenu);
             });
             
-            // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
