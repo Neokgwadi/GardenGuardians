@@ -310,456 +310,495 @@ section {
 
 .problem-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px极速赛车开奖直播
-    .problem-icon {
-        font-size: 2.5rem;
-        color: var(--primary-green);
-        margin-bottom: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.problem-icon {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.problem-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: var(--dark-text);
+}
+
+.problem-card p {
+    color: var(--light-text);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Case Studies Section */
+.case-studies {
+    background-color: var(--white);
+}
+
+.case-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.case-card {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.case-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow);
+}
+
+.case-header {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+}
+
+.case-content {
+    padding: 20px;
+}
+
+.case-content h3 {
+    font-size: 1.4rem;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.case-location {
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.case-details {
+    margin-bottom: 15px;
+}
+
+.case-details h4 {
+    color: var(--dark-text);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.case-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.case-details li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--light-text);
+}
+
+.case-details li:before {
+    content: "•";
+    color: var(--primary-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.case-content p {
+    margin-bottom: 20px;
+    color: var(--light-text);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Solutions Section */
+.solutions {
+    background-color: var(--light-bg);
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.solution-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: transform 0.3s;
+    border-top: 4px solid var(--primary-green);
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.solution-icon {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.solution-card h3 {
+    font-size: 1.4rem;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.solution-card p {
+    margin-bottom: 20px;
+    color: var(--light-text);
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.solution-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.solution-card ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--light-text);
+}
+
+.solution-card ul li:before {
+    content: "•";
+    color: var(--primary-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Resources Section */
+.resources {
+    background-color: var(--white);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.resource-card {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: transform 0.3s;
+    border-left: 4px solid var(--accent);
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.resource-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.resource-card h3 {
+    font-size: 1.4rem;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.resource-card p {
+    margin-bottom: 20px;
+    color: var(--light-text);
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.resource-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.resource-card ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--light-text);
+}
+
+.resource-card ul li:before {
+    content: "•";
+    color: var(--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.resource-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--primary-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+}
+
+/* Weather Alert Tool */
+.weather-alert {
+    background-color: var(--light-bg);
+}
+
+.weather-tool {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px var(--shadow);
+    margin: 0 auto;
+}
+
+.weather-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.weather-input input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.weather-input input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+
+.weather-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.weather-display {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.weather-icon {
+    font-size: 3.5rem;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.weather-detail {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.weather-detail h4 {
+    color: var(--light-text);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.weather-detail p {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-text);
+    color: var(--white);
+    padding: 50px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: var(--light-bg);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 400;
+}
+
+.footer-column ul li a:hover {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-green);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-bg);
+    font-size: 0.9rem;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
     }
     
-    .problem-card h3 {
-        margin-bottom: 15px;
-        font-size: 1.4rem;
-        color: var(--dark-text);
+    nav {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        overflow: visible;
     }
     
-    .problem-card p {
-        color: var(--light-text);
-        line-height: 1.6;
+    nav ul {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin-bottom: 0;
+        margin-left: 25px;
+    }
+    
+    nav ul li a {
+        padding: 8px 0;
+        border-radius: 0;
         font-size: 1rem;
     }
     
-    /* Case Studies Section */
-    .case-studies {
-        background-color: var(--white);
+    nav ul li a:hover {
+        background-color: transparent;
+    }
+    
+    .overlay {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .security-grid, .problems-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .case-grid, .solutions-grid, .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .weather-input {
+        flex-direction: row;
+    }
+    
+    .weather-buttons {
+        flex-direction: row;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .security-grid, .problems-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
     
     .case-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 25px;
+        grid-template-columns: repeat(3, 1fr);
     }
     
-    .case-card {
-        background-color: var(--light-bg);
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px var(--shadow);
-        transition: transform 0.3s, box-shadow 0.3s;
+    .solutions-grid, .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    .case-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px var(--shadow);
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
-    
-    .case-header {
-        background-color: var(--primary-green);
-        color: var(--white);
-        padding: 20px;
-        text-align: center;
-    }
-    
-    .case-content {
-        padding: 20px;
-    }
-    
-    .case-content h3 {
-        font-size: 1.4rem;
-        color: var(--dark-text);
-        margin-bottom: 10px;
-    }
-    
-    .case-location {
-        color: var(--primary-green);
-        font-weight: 600;
-        margin-bottom: 15px;
-        display: block;
-        font-size: 0.9rem;
-    }
-    
-    .case-details {
-        margin-bottom: 15px;
-    }
-    
-    .case-details h4 {
-        color: var(--dark-text);
-        margin-bottom: 5px;
-        font-size: 1.1rem;
-    }
-    
-    .case-details ul {
-        list-style: none;
-        padding-left: 0;
-    }
-    
-    .case-details li {
-        margin-bottom: 5px;
-        padding-left: 20px;
-        position: relative;
-        color: var(--light-text);
-    }
-    
-    .case-details li:before {
-        content: "•";
-        color: var(--primary-green);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-    }
-    
-    .case-content p {
-        margin-bottom: 20px;
-        color: var(--light-text);
-        line-height: 1.6;
-        font-size: 1rem;
-    }
-    
-    /* Solutions Section */
-    .solutions {
-        background-color: var(--light-bg);
-    }
-    
-    .solutions-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .solution-card {
-        background-color: var(--white);
-        border-radius: 8px;
-        padding: 25极速赛车开奖直播
-        .solution-icon {
-            font-size: 2.5rem;
-            color: var(--primary-green);
-            margin-bottom: 20px;
-        }
-        
-        .solution-card h3 {
-            font-size: 1.4rem;
-            color: var(--dark-text);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .solution-card p {
-            margin-bottom: 20极速赛车开奖直播
-            .solution-card ul {
-                list-style: none;
-                text-align: left;
-            }
-            
-            .solution-card ul li {
-                margin-bottom: 10px;
-                padding-left: 20px;
-                position: relative;
-                color: var(--light-text);
-            }
-            
-            .solution-card ul li:before {
-                content: "•";
-                color: var(--primary-green);
-                font-weight: bold;
-                position: absolute;
-                left: 0;
-            }
-            
-            /* Resources Section */
-            .resources {
-                background-color: var(--white);
-            }
-            
-            .resources-grid {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .resource-card {
-                background-color: var(--light-bg);
-                border-radius: 8px;
-                padding: 25px;
-                box-shadow: 0 5px 15px var(--shadow);
-                transition: transform 0.3s;
-                border-left: 4px solid var(--accent);
-            }
-            
-            .resource-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px var(--shadow);
-            }
-            
-            .resource-icon {
-                font-size: 2.5rem;
-                color: var(--accent);
-                margin-bottom: 20px;
-                text-align: center;
-            }
-            
-极速赛车开奖直播
-            .resource-card h3 {
-                font-size: 1.4rem;
-                color: var(--dark-text);
-                margin-bottom: 15px;
-                text-align: center;
-            }
-            
-            .resource-card p {
-                margin-bottom: 20px;
-                color: var(--light-text);
-                line极速赛车开奖直播
-                .resource-card ul {
-                    list-style: none;
-                    text-align: left;
-                }
-                
-                .resource-card ul li {
-                    margin-bottom: 10px;
-                    padding-left: 20px;
-                    position: relative;
-                    color: var(--light-text);
-                }
-                
-                .resource-card ul li:before {
-                    content: "•";
-                    color: var(--accent);
-                    font-weight: bold;
-                    position: absolute;
-                    left: 0;
-                }
-                
-                .resource-link {
-                    display: block;
-                    text-align: center;
-                    margin-top: 20px;
-                    color: var(--primary-green);
-                    font-weight: 600;
-                    text-decoration: none;
-                }
-                
-                .resource-link:hover {
-                    text-decoration: underline;
-                }
-                
-                /* Weather Alert Tool */
-                .weather-alert {
-                    background-color: var(--light-bg);
-                }
-                
-                .weather-tool {
-                    background-color: var(--white);
-                    border-radius: 8px;
-                    padding: 30px;
-                    box-shadow: 0极速赛车开奖直播
-                    .weather-input {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 15px;
-                        margin-bottom: 30px;
-                    }
-                    
-                    .weather-input input {
-                        width: 100%;
-                        padding: 15px;
-                        border: 1px solid #ddd;
-                        border-radius: 6px;
-                        font-size: 1rem;
-                        font-family: 'Roboto', sans-serif;
-                    }
-                    
-                    .weather-input input:focus {
-                        outline: none;
-                        border-color: var(--primary-green);
-                    }
-                    
-                    .weather-buttons {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 10px;
-                    }
-                    
-                    .weather-display {
-                        background-color: var(--light-bg);
-                        border-radius: 8极速赛车开奖直播
-                        .weather-icon {
-                            font-size: 3.5rem;
-                            color: var(--primary-green);
-                            margin-bottom: 15px;
-                        }
-                        
-                        .weather-details {
-                            display: grid;
-                            grid-template-columns: repeat(2, 1fr);
-                            gap: 12px;
-                            margin-top: 20px;
-                        }
-                        
-                        .weather-detail {
-                            background-color: var(--white);
-                            padding: 15px;
-                            border-radius: 6px;
-                        }
-                        
-                        .weather-detail h4 {
-                            color: var(--light-text);
-                            margin-bottom: 5px;
-                            font-size: 0.9rem;
-                            font-weight: 500;
-                        }
-                        
-                        .weather-detail p {
-                            font-weight: 700;
-                            font-size: 1.1rem;
-                            color: var(--dark-text);
-                        }
-                        
-                        /* Footer */
-                        footer {
-                            background-color: var(--dark-text);
-                            color: var(--white);
-                            padding: 50px 0 20px;
-                        }
-                        
-                        .footer-grid {
-                            display: grid;
-                            grid-template-columns: 1fr;
-                            gap: 30px;
-                            margin-bottom: 40px;
-                        }
-                        
-                        .footer-column h3 {
-                            font-size: 1.2极速赛车开奖直播
-                            .footer-column ul {
-                                list-style: none;
-                            }
-                            
-                            .footer-column ul li {
-                                margin-bottom: 10px;
-                            }
-                            
-                            .footer-column ul li a {
-                                color: var(--light-bg);
-                                text-decoration: none;
-                                transition: color 0.3s;
-                                font-weight: 400;
-                            }
-                            
-                            .footer-column ul li a:hover {
-                                color: var(--accent);
-                            }
-                            
-                            .social-links {
-                                display: flex;
-                                gap: 15px;
-                                margin-top: 20px;
-                            }
-                            
-                            .social-links a {
-                                display: inline-flex;
-                                align-items: center;
-                                justify-content: center;
-                                width: 40px;
-                                height: 40px;
-                                background-color: rgba(255, 255, 255, 0.1);
-                                border-radius: 50%;
-                                color: var(--white);
-                                transition: background-color 0.3s;
-                            }
-                            
-                            .social极速赛车开奖直播
-                            .copyright {
-                                text-align: center;
-                                padding-top: 30极速赛车开奖直播
-                                .copyright p {
-                                    color: var(--light-bg);
-                                    font-size: 0.9rem;
-                                }
-                                
-                                /* Desktop Styles */
-                                @media (min-width: 768px) {
-                                    .mobile-menu-btn {
-                                        display: none;
-                                    }
-                                    
-                                    nav {
-                                        position: static;
-                                        width: auto;
-                                        height: auto;
-                                        background: transparent;
-                                        box-shadow: none;
-                                        padding: 0;
-                                        overflow: visible;
-                                    }
-                                    
-                                    nav ul {
-                                        display: flex;
-                                    }
-                                    
-                                    nav ul li {
-                                        margin-bottom: 0;
-                                        margin-left: 25px;
-                                    }
-                                    
-                                    nav ul li a {
-                                        padding: 8px 0;
-                                        border-radius: 0;
-                                        font-size: 1rem;
-                                    }
-                                    
-                                    nav ul极速赛车开奖直播
-                                    .overlay {
-                                        display: none;
-                                    }
-                                    
-                                    .hero h1 {
-                                        font-size: 2.8rem;
-                                    }
-                                    
-                                    .hero h2 {
-                                        font-size: 1.8rem;
-                                    }
-                                    
-                                    .hero-buttons {
-                                        flex-direction: row;
-                                        justify-content: center;
-                                    }
-                                    
-                                    .security-grid, .problems-grid {
-                                        grid-template-columns: repeat(2, 1fr);
-                                    }
-                                    
-                                    .case-grid, .solutions-grid, .resources-grid {
-                                        grid-template极速赛车开奖直播
-                                    }
-                                    
-                                    .weather-input {
-                                        flex-direction: row;
-                                    }
-                                    
-                                    .weather-buttons {
-                                        flex-direction: row;
-                                    }
-                                    
-                                    .footer-grid {
-                                        grid-template-columns: repeat(2, 1fr);
-                                    }
-                                }
-                                
-                                @media (min-width: 1024px) {
-                                    .security-grid, .problems-grid {
-                                        grid-template-columns: repeat(4, 1fr);
-                                    }
-                                    
-                                    .case-grid {
-                                        grid-template-columns: repeat(3, 1fr);
-                                    }
-                                    
-                                    .solutions-grid, .resources-grid {
-                                        grid-template-columns: repeat(2, 1fr);
-                                    }
-                                    
-                                    .footer-grid {
-                                        grid-template-columns: repeat(4, 1fr);
-                                    }
-                                }
+}
+
